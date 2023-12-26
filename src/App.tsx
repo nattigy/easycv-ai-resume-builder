@@ -23,30 +23,32 @@ function App() {
         <Grid item xs={12} md={5}>
           Content
           <PDFDownloadLink
-              document={
-                <MyDocument contentMap={contentState?.contentState?.content} />
-              }
-              fileName="somename.pdf"
-            >
-              {({ blob, url, loading, error }) =>
-                loading ? "Loading document..." : "Download now!"
-              }
-            </PDFDownloadLink>
+            document={
+              <MyDocument contentMap={contentState?.contentState?.content} />
+            }
+            fileName="somename.pdf"
+          >
+            {({ blob, url, loading, error }) =>
+              loading ? "Loading document..." : "Download now!"
+            }
+          </PDFDownloadLink>
           <ContentManager />
         </Grid>
 
         <Grid item xs={12} md={6}>
-          Preview
+          <Typography>Preview</Typography>
           <Box>
-            <PDFViewer
-              style={{
-                width: "100%",
-                height: "80vh",
-              }}
-              showToolbar={false}
-            >
-              <MyDocument contentMap={contentState?.contentState?.content} />
-            </PDFViewer>
+            <Box position="fixed">
+              <PDFViewer
+                style={{
+                  width: "40vw",
+                  height: "90vh",
+                }}
+                showToolbar={false}
+              >
+                <MyDocument contentMap={contentState?.contentState?.content} />
+              </PDFViewer>
+            </Box>
           </Box>
         </Grid>
       </Grid>
