@@ -16,7 +16,7 @@ const ContentManager = () => {
     <div>
       <Box>
         {ContentList.map((content) => (
-          <Box mx={3}>
+          <Box>
             <SingleContent content={content} />
           </Box>
         ))}
